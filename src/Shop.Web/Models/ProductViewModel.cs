@@ -10,6 +10,7 @@ namespace Shop.Web.Models
     public class ProductViewModel
     {
         //utwóz nowy produkt bazując na dropdawn pod 
+        public Guid Id { get; set; }
         [Required(ErrorMessage = "Name was not provided.")]
         [StringLength(100, MinimumLength = 3)]//opcjonalnie jest ilość minimalna
         public string Name { get; set; }
@@ -19,12 +20,8 @@ namespace Shop.Web.Models
         [Range(1, 100000)]
         public decimal Price { get; set; }
 
+
         //lista która służy do pobierania kategorize słownika SelectListItem
-        public List<SelectListItem> Categories { get; } = new List<SelectListItem>
-        {
-          new SelectListItem {Text=  "Electronics", Value =  "Electronics"},
-          new SelectListItem {Text=  "Trousers", Value =  "Trousers"},
-          new SelectListItem {Text=  "Tools", Value =  "Tools"}
-        };
+
     }
 }

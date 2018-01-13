@@ -40,7 +40,7 @@ namespace Shop.Web
 
             app.UseStaticFiles();
 
-            app.UseMiddleware<MyMiddleware>();
+            app.UseMyMiddleware();
 
 
             app.UseMvc(routes =>

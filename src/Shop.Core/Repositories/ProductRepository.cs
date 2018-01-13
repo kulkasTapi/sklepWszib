@@ -8,7 +8,7 @@ namespace Shop.Core.Repositories
 {
     public class ProductRepository : IProductRepository
     {
-        private readonly ISet<Product> _products = new HashSet<Product>()
+        private static readonly ISet<Product> _products = new HashSet<Product>()
         {
             new Product("Laptop", "Electronics", 3500),
             new Product("Jeans", "Trousers", 150),

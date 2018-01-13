@@ -13,9 +13,9 @@ namespace Shop.Web.Controllers
     {
         private static readonly List<Product> _products = new List<Product>
         {
-            new Product("Laprop", "Electronics", 3500),
+            new Product("Laptop", "Electronics", 3500),
             new Product("Jeans", "Trousers", 150),
-            new Product("Hammer", "Tools", 50)
+            new Product("Hummer", "Tools", 50)
         };
 
         [HttpGet]
@@ -39,7 +39,7 @@ namespace Shop.Web.Controllers
             {
                 return View(viewModel);
             }
-            _products.Add(new Product(viewModel.Category, viewModel.Name, viewModel.Price));
+            _products.Add(new Product(viewModel.Name, viewModel.Category, viewModel.Price));
 
             return RedirectToAction(nameof(Index));
         }
